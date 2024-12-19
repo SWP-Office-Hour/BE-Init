@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
+import { CryptoModule } from './utils/crypto/crypto.module';
 @Module({
   imports: [
     UsersModule,
@@ -10,6 +11,7 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
       envFilePath: '.env',
     }),
+    CryptoModule,
   ],
   controllers: [AppController],
   providers: [AppService],

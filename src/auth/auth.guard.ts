@@ -9,8 +9,8 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { Reflector } from '@nestjs/core';
 import { Request } from 'express';
-import { UserRole } from 'src/users/user.dto';
-import { LogoutReqBody } from 'src/users/users.request';
+import { UserRole } from 'src/users/models/user.dto';
+import { LogoutReqBody } from 'src/users/models/users.request';
 import { ROLES_KEY } from 'src/utils/decorators/role.decorator';
 import { JwtUtilsService } from 'src/utils/jwt/jwtUtils.service';
 
