@@ -32,4 +32,8 @@ export class DatabaseService {
   get User() {
     return this.prisma.user;
   }
+
+  get UserTeam() {
+    return this.prisma.user_team;
+  }
 }
