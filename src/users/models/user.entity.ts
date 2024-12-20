@@ -1,4 +1,3 @@
-
 interface UserType {
   id?: string;
   name: string;
@@ -10,7 +9,7 @@ interface UserType {
   status?: UserStatus;
 }
 
-export class UserDto {
+export class UserEntity {
   id?: string;
   name: string;
   phone: string;
@@ -31,6 +30,7 @@ export class UserDto {
     this.status = userData.status || UserStatus.ACTIVE;
   }
 }
+
 /*
 id?: string
 name: string
@@ -50,6 +50,9 @@ export enum UserStatus {
 
 export enum UserRole {
   ADMIN,
-  STAFF,
+  SHIPPER,
+  MEDICAL,
+  MANAGER,
+  CUSTOMER,
   USER,
 }

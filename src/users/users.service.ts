@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { DatabaseService } from 'src/database/database.service';
 import { LoginReqBody, RegisterReqBody } from './models/users.request';
-import { UserDto, UserRole } from './models/user.dto';
+import { UserEntity, UserRole } from './models/user.entity';
 import { JwtUtilsService } from 'src/utils/jwt/jwtUtils.service';
 import { ConfigService } from '@nestjs/config';
 import { TokenDto, TokenType } from 'src/utils/jwt/jwt.dto';
@@ -57,7 +57,7 @@ export class UsersService {
   }
 
   //
-  // async checkEmail(email: string): Promise<UserDto> {
+  // async checkEmail(email: string): Promise<UserEntity> {
   //   const result = await this.databaseService.User.findUnique({
   //     where: {
   //       email,
@@ -82,7 +82,7 @@ export class UsersService {
   //   return Boolean(result);
   // }
 
-  async checkPhone(phone: string): Promise<UserDto> {
+  async checkPhone(phone: string): Promise<UserEntity> {
     const result = await this.databaseService.User.findFirst({
       where: {
         phone,
@@ -119,14 +119,14 @@ export class UsersService {
   //   return result.verify_status;
   // }
 
-  async users(): Promise<UserDto[]> {
+  async users(): Promise<UserEntity[]> {
     const result = await this.databaseService.User.findMany();
     return result;
   }
 
   async register(data: RegisterReqBody) {
     const result = await this.databaseService.User.create({
-      data: new UserDto(data),
+      data: new UserEntity(data),
     });
     // const email_verify_token = await this.signEmailToken({
     //   user_id: result.id,

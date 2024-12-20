@@ -21,7 +21,7 @@ import {
   RoleAuthGuard,
 } from 'src/auth/auth.guard';
 import { Roles } from 'src/utils/decorators/role.decorator';
-import { UserRole } from './models/user.dto';
+import { UserRole } from './models/user.entity';
 import { Request } from 'express';
 import { ApiBody, ApiHeader, ApiResponse } from '@nestjs/swagger';
 
