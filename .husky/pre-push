@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+# Lint branch name for consistency
+# Get the current branch name
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+# Define the regex pattern for Jira ticket IDs (e.g., PROJ-123, TASK-456)
+PATTERN="^(STORY|TASK|BUG|SCRUM)-[0-9]+"
+
+# shellcheck disable=SC3010
+if [[ ! $BRANCH_NAME =~ $PATTERN ]]; then
+  echo "❌ Error: Branch name '$BRANCH_NAME' does not contain a valid Jira Task/Story ID."
+  echo "✔️  Branch names must include a Jira ticket ID, e.g., PROJ-123-feature-description."
+  exit 1
+fi
+
+echo "✅ Branch name '$BRANCH_NAME' is valid."
+exit 0

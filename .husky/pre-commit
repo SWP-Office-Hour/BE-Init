@@ -1,0 +1,10 @@
+#!/bin/sh
+# Pre-commit hook to check the commit message for a specific pattern
+# Run Prettier on the staged files
+npx prettier $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g') --write --ignore-unknown
+
+# Restage the formatted files (if Prettier modifies any)
+git update-index --again
+
+# Exit successfully if everything passed
+exit 0
