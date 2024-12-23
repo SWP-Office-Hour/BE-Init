@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "reset-script": "prisma db pull && prisma generate",
-    "reset": "infisical run -- npm run reset-script",
+    "reset": "infisical run --env staging -- npm run reset-script",
     "start:dev": "infisical run --env dev --watch -- nest start --watch",
     "start:staging": "infisical run --env staging --watch -- nest start --watch",
     "start:prod": "infisical run --env prod --watch -- nest start --watch",
