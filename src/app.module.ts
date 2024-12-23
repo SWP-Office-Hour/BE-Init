@@ -5,6 +5,8 @@ import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { TeamsModule } from './teams/teams.module';
 import { PostsModule } from './posts/posts.module';
+import { OrdersModule } from './orders/orders.module';
+
 @Module({
   imports: [
     UsersModule,
@@ -14,6 +16,7 @@ import { PostsModule } from './posts/posts.module';
     }),
     TeamsModule,
     PostsModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
