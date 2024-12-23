@@ -6,6 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "start:infi": "infisical run --watch -- nest start --watch",
     "db:init": "npx prisma init",
     "db:generate": "npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
@@ -26,6 +27,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@infisical/sdk": "^3.0.4",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.3.0",
     "@nestjs/core": "^10.0.0",
