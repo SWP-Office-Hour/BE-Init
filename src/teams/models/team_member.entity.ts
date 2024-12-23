@@ -13,7 +13,7 @@ export class TeamMemberEntity {
   user_id: string;
   status: number;
   added_to_team_at: Date;
-  leave_at: Date;
+  leave_at?: Date;
 
   constructor(data: TeamMemberType) {
     this.id = data.id;
